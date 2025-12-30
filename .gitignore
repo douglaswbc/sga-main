@@ -1,4 +1,28 @@
-# Logs
+# Dependências
+node_modules/
+.pnpm-store/
+.deno/
+
+# Build e Saída
+dist/
+dist-ssr/
+*.tsbuildinfo
+
+# Variáveis de Ambiente (CRÍTICO: Nunca subir arquivos .env)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# Supabase e Local Development
+.supabase/
+# Se você usa Edge Functions localmente, evite subir chaves de teste
+supabase/.temp/
+supabase/functions/.env
+
+# Logs e Debugging
 logs
 *.log
 npm-debug.log*
@@ -7,18 +31,20 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
+# Diretórios de Editores
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+!.vscode/settings.json
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+*.swp
+
+# Arquivos do Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Testes
+coverage/
