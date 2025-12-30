@@ -4,7 +4,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { 
   LayoutDashboard, Users, Car, FileText, 
   DollarSign, MessageSquareText, ClipboardCheck, 
-  Settings, ShieldAlert, LogOut // Substituído UserShield por ShieldAlert
+  Settings, ShieldAlert, LogOut
 } from 'lucide-react';
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
@@ -49,7 +49,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               </li>
             ))}
 
-            {profile?.role === 'super_admin' && (
+            {profile?.role === 'admin' && (
               <li className="mt-4 pt-4 border-t border-slate-700">
                 <NavLink
                   to="/admin"

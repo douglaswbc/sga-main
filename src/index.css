@@ -1,6 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss"; /* */
+
+@theme {
+  /* Definindo suas cores personalizadas direto no tema v4 */
+  --color-dark: #121829;
+  --color-card: #1e293b;
+  --color-input: #2d3748;
+  --color-accent: #6366f1;
+  
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
 
 @layer base {
   body {
@@ -10,7 +18,6 @@
   }
 }
 
-/* Remove o centralizador do template padrão do Vite */
 #root {
   width: 100%;
   margin: 0;

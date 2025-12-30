@@ -6,6 +6,16 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from './contexts/AuthContext';
 import DashboardLayout from './components/DashboardLayout';
 import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import Locatarios from './pages/Locatarios';
+import Veiculos from './pages/Veiculos';
+import Contratos from './pages/Contratos';
+import Cobrancas from './pages/Cobrancas';
+import Mensagens from './pages/Mensagens';
+import Triagem from './pages/Triagem';
+import Configuracoes from './pages/Configuracoes';
+import Admin from './pages/Admin';
+import PortalLocatario from './pages/PortalLocatario';
 
 // Componente temporário para teste
 const Placeholder = ({ title }) => <h1 className="text-2xl text-white font-bold">{title}</h1>;
@@ -17,18 +27,19 @@ function App() {
         <div className="min-h-screen bg-[#121829]">
           <Routes>
             <Route path="/login" element={<Login />} />
+            <Route path="/portal/:token" element={<PortalLocatario />} />
             
             {/* Rotas Protegidas pelo DashboardLayout */}
             <Route element={<DashboardLayout />}>
-              <Route path="/dashboard" element={<Placeholder title="Dashboard" />} />
-              <Route path="/locatarios" element={<Placeholder title="Gestão de Locatários" />} />
-              <Route path="/veiculos" element={<Placeholder title="Gestão de Veículos" />} />
-              <Route path="/contratos" element={<Placeholder title="Contratos" />} />
-              <Route path="/cobrancas" element={<Placeholder title="Histórico de Cobranças" />} />
-              <Route path="/mensagens" element={<Placeholder title="Templates de Mensagem" />} />
-              <Route path="/triagem" element={<Placeholder title="Triagem de Candidatos" />} />
-              <Route path="/configuracoes" element={<Placeholder title="Configurações" />} />
-              <Route path="/admin" element={<Placeholder title="Painel Administrativo" />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/locatarios" element={<Locatarios />} />
+              <Route path="/veiculos" element={<Veiculos />} />
+              <Route path="/contratos" element={<Contratos />} />
+              <Route path="/cobrancas" element={<Cobrancas />} />
+              <Route path="/mensagens" element={<Mensagens />} />
+              <Route path="/triagem" element={<Triagem />} />
+              <Route path="/configuracoes" element={<Configuracoes />} />
+              <Route path="/admin" element={<Admin />} />
             </Route>
 
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
